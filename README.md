@@ -1,8 +1,6 @@
 # SwaggerYard::Rails
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/swagger_yard/rails`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The SwaggerYard::Rails gem is a Rails Engine designed to parse your Yardocs API controllers using SwaggerYard. It'll create a Swagger-UI complaint JSON to be served out through where you mount SwaggerYard::Rails::Engine.
 
 ## Installation
 
@@ -16,13 +14,26 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install swagger_yard-rails
-
 ## Usage
 
-TODO: Write usage instructions here
+### Mount your engine ###
+
+```ruby
+# add to config/routes.rb
+mount SwaggerYard::Engine, at: "/swagger"
+```
+
+### Configure SwaggerYard ###
+
+```ruby
+# config/initializers/swagger_yard.rb
+SwaggerYard.configure do |config|
+  # the rest of your configuration here
+
+  # where your swagger spec json will show up
+  config.swagger_spec_base_path = "http://localhost:3000/swagger/api"
+end
+```
 
 ## Development
 
@@ -33,7 +44,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/swagger_yard-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
 
 ## License
 

@@ -1,0 +1,2 @@
+module ControllerExtras
+end
