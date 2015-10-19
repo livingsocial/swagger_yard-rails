@@ -25,7 +25,25 @@ mount SwaggerYard::Rails::Engine, at: "/swagger"
 
 ### Add JS/CSS for UI ###
 
+In your Gemfile (until the release of 2.1.3):
+
+```ruby
+gem 'swagger-ui_rails2', github: '3scale/swagger-ui_rails', branch: 'dev-2.1.3'
+```
+
 [https://github.com/3scale/swagger-ui_rails/tree/dev-2.1.3#usage](https://github.com/3scale/swagger-ui_rails/tree/dev-2.1.3#usage)
+
+in application.css:
+
+```css
+*= require swagger-ui2/index
+```
+
+in application.js:
+
+```js
+//= require swagger-ui2/index
+```
 
 **Note:** swagger_yard-rails will handle the template
 
