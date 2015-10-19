@@ -3,6 +3,9 @@ module SwaggerYard
     class SwaggerController < ApplicationController
       layout false
 
+      def doc
+      end
+
       def index
         listing = resource_listing.to_h
         listing.merge!("basePath" => request.url) if listing["basePath"].blank?

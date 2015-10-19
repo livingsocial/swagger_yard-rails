@@ -23,6 +23,12 @@ And then execute:
 mount SwaggerYard::Rails::Engine, at: "/swagger"
 ```
 
+### Add JS/CSS for UI ###
+
+[https://github.com/3scale/swagger-ui_rails/tree/dev-2.1.3#usage](https://github.com/3scale/swagger-ui_rails/tree/dev-2.1.3#usage)
+
+**Note:** swagger_yard-rails will handle the template
+
 ### Configure SwaggerYard ###
 
 ```ruby
