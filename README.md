@@ -20,7 +20,7 @@ And then execute:
 
 ```ruby
 # add to config/routes.rb
-mount SwaggerYard::Engine, at: "/swagger"
+mount SwaggerYard::Rails::Engine, at: "/swagger"
 ```
 
 ### Configure SwaggerYard ###
