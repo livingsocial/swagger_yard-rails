@@ -1,13 +1,18 @@
 require 'spec_helper'
 
-describe SwaggerYard::Rails::Controller do
-  let(:controller) { subject.new }
-  let(:session) {{}}
+describe SwaggerYard::Rails::SwaggerController, type: :request do
+  let(:api_json) {JSON.parse(File.read(File.expand_path('../../../fixtures/api.json', __FILE__)))}
+  let(:resource_json) {JSON.parse(File.read(File.expand_path('../../../fixtures/pets.json', __FILE__)))}
 
-  before(:each) do
-    controller.stubs(:session).returns(session)
+  it 'returns api json' do
+    get '/swagger/api'
+    expect(response.status).to eq(200)
+    expect(JSON.parse(response.body)).to eq(api_json)
   end
 
-  it 'returns api json'
-  it 'returns resource json'
+  it 'returns resource json' do
+    get '/swagger/api/pets'
+    expect(response.status).to eq(200)
+    expect(JSON.parse(response.body)).to eq(resource_json)
+  end
 end

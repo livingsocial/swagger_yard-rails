@@ -1,6 +1,6 @@
 module SwaggerYard
   module Rails
-    class Controller < ApplicationController
+    class SwaggerController < ApplicationController
       layout false
 
       def index
@@ -18,7 +18,7 @@ module SwaggerYard
 
       private
       def resource_listing
-        SwaggerYard::ResourceListing.new(Rails.root+'app/controllers/**/*.rb', Rails.root+'app/models/**/*.rb')
+        SwaggerYard::ResourceListing.new(::Rails.root+'app/controllers/**/*.rb', ::Rails.root+'app/models/**/*.rb')
       end
     end
   end
