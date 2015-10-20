@@ -7,9 +7,13 @@ module SwaggerYard
       end
 
       def index
-        listing = resource_listing.to_h
-        listing.merge!("basePath" => request.url) if listing["basePath"].blank?
-        render :json => listing, :layout => false
+        if params[:version] == "2.0"
+          render :json => {}, :layout => false
+        else
+          listing = resource_listing.to_h
+          listing.merge!("basePath" => request.url) if listing["basePath"].blank?
+          render :json => listing, :layout => false
+        end
       end
 
       def show

@@ -5,6 +5,7 @@ require 'bundler/setup'
 require File.expand_path('../fixtures/dummy/config/application.rb', __FILE__)
 
 require 'rspec/rails'
+require 'rspec/its'
 require 'mocha'
 require 'bourne'
 
