@@ -8,7 +8,7 @@ module SwaggerYard
 
       def index
         if params[:version] == "2.0"
-          render :json => {}, :layout => false
+          render :json => Swagger.new.swagger_v2, :layout => false
         else
           listing = resource_listing.to_h
           listing.merge!("basePath" => request.url) if listing["basePath"].blank?
