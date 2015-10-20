@@ -12,6 +12,10 @@ module SwaggerYard
           config.model_path      = ::Rails.root + 'app/models/**/*'
         end
       end
+
+      rake_tasks do
+        load File.expand_path('../tasks.rake', __FILE__)
+      end
     end
   end
 end
