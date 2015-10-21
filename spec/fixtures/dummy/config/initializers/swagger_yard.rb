@@ -1,4 +1,6 @@
 SwaggerYard.configure do |config|
+  config.title = "Dummy App"
+  config.description = "Dummy application for testing SwaggerYard and Rails"
   config.reload = true
   config.swagger_version = "1.2"
   config.api_version = "1.0"
