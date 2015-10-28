@@ -7,3 +7,4 @@ module SwaggerYard
 end
 
 require "swagger_yard/rails/engine"
+require "swagger_yard/rails/route_inspector"
