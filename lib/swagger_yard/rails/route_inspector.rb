@@ -14,6 +14,8 @@ module SwaggerYard
         end
 
         def call(yard_obj)
+          return nil if skip_object?(yard_obj)
+
           info   = yard_info(yard_obj)
           route  = find_route(info)
           method = route.verb.source.gsub(/[$^]/, '')
@@ -33,6 +35,12 @@ module SwaggerYard
         alias_method :[], :call
 
         private
+        def skip_object?(obj)
+          obj.scope != :instance ||
+            obj.visibility != :public ||
+            obj.docstring.blank?
+        end
+
         def yard_info(obj)
           {}.tap do |info|
             route_tag = obj.tags.detect {|t| t.tag_name == 'route' }

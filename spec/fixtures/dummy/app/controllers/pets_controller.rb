@@ -32,6 +32,16 @@ class PetsController < ApplicationController
   def update
   end
 
-  # def destroy
-  # end
+  def destroy
+    # No docstring here so this won't be included
+  end
+
+  # This is a class method so this won't be included
+  def self.a_class_method
+  end
+
+  private
+  # This method is private so this won't be included
+  def a_helper
+  end
 end
