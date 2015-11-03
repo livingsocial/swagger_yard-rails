@@ -10,8 +10,7 @@ require 'apivore'
 require 'mocha'
 require 'bourne'
 
-Dir[File.expand_path('../spec/support/**/*.rb',
-                     Gem.loaded_specs['swagger_yard'].loaded_from)].each do |f|
+Dir[File.expand_path('../support/**/*.rb', __FILE__)].each do |f|
   require f
 end
 
