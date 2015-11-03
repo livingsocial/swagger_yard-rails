@@ -20,8 +20,8 @@ module SwaggerYard
 
           raise Error, "no http method: #{info.inspect}" if method.empty?
 
-          path = route.parts.inject(route.ast.to_s) do |path,sym|
-            path.sub(sym.inspect, "{#{sym}}")
+          path = route.parts.inject(route.ast.to_s) do |p,sym|
+            p.sub(sym.inspect, "{#{sym}}")
           end
 
           # FIXME: always remove format parameter?
