@@ -10,6 +10,11 @@ require 'apivore'
 require 'mocha'
 require 'bourne'
 
+Dir[File.expand_path('../spec/support/**/*.rb',
+                     Gem.loaded_specs['swagger_yard'].loaded_from)].each do |f|
+  require f
+end
+
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
@@ -17,4 +22,6 @@ RSpec.configure do |config|
   config.mock_with :mocha
 
   config.order = 'random'
+
+  config.include SilenceLogger
 end
