@@ -24,11 +24,13 @@ RSpec.describe "Swagger.json", :type => :request do
 
       it { is_expected.to include('get', 'post') }
 
-      it { is_expected.to_not include('put') }
-
       its(['get']) { is_expected.to include('summary' => 'return a list of Pets')}
 
       its(['post']) { is_expected.to include('summary' => 'create a Pet')}
+
+      context "update action is not swaggered" do
+        it { is_expected.to_not include('put') }
+      end
     end
   end
 end

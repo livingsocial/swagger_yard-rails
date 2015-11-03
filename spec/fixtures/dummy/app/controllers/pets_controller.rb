@@ -26,6 +26,9 @@ class PetsController < ApplicationController
   end
 
   # Update a Pet
+  #
+  # There is no path tag here nor a route in the routing table so this action
+  # will not be swaggered.
   def update
   end
 
