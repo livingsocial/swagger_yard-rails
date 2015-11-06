@@ -49,15 +49,59 @@ in application.js:
 
 ### Configure SwaggerYard ###
 
+See [Getting Started] in the swagger_yard docs for details.
+
 ```ruby
 # config/initializers/swagger_yard.rb
 SwaggerYard.configure do |config|
-  # the rest of your configuration here
-
-  # where your swagger spec json will show up
-  config.swagger_spec_base_path = "http://localhost:3000/swagger/api"
+  # your configuration here
 end
 ```
+
+[Getting Started]: https://github.com/tpitale/swagger_yard#getting-started
+
+### Write YARD documentation ###
+
+Write YARD documentation for your controllers and models as described in
+[SwaggerYard Usage].
+
+To include a controller in your swagger definition, add a `@resource` tag to the
+controller's class documentation.
+
+```ruby
+# @resource Pet
+class PetsController < ApplicationController
+  # ...
+end
+```
+
+Once a controller has been tagged as a swagger resource, all public instance
+methods with docstrings will be candidates for inclusion as swagger apis, even
+if they don't include `@path` tags. `swagger_yard-rails` includes a
+[path discovery function] implementation that uses the Rails router to lookup
+paths, allowing `@path` tags to be omitted.
+
+`swagger_yard-rails` also provides a `@route` tag to indicate a named route
+to be connected to an api action.
+
+```ruby
+# config/routes.rb
+Dummy::Application.routes.draw do
+  get '/greet', to: 'hello#greeting', as: 'greeting'
+end
+```
+
+```ruby
+# @resource Hello
+class HelloController < ApplicationController
+  # @route greeting
+  def greeting
+  end
+end
+```
+
+[SwaggerYard Usage]: https://github.com/tpitale/swagger_yard#swaggeryard-usage
+[path discovery function]: https://github.com/tpitale/swagger_yard#path-discovery-function
 
 ## Development
 
