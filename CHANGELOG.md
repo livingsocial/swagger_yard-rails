@@ -1,5 +1,9 @@
 # SwaggerYard-Rails Changelog
 
+## 0.3.1 -- 22-12-2015 ##
+
+* Don't use application layout for swagger#doc, makes setup easier
+
 ## 0.3.0 -- 16-12-2015 ##
 
 * Don't clobber controller/model lookup paths in initializer if they have
