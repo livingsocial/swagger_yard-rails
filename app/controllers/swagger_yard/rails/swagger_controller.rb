@@ -1,13 +1,13 @@
 module SwaggerYard
   module Rails
     class SwaggerController < ApplicationController
-      layout 'application'
+      layout false
 
       def doc
       end
 
       def index
-        render :json => Swagger.new.to_h, :layout => false
+        render :json => Swagger.new.to_h
       end
     end
   end

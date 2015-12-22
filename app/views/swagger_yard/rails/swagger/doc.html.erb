@@ -1,4 +1,13 @@
-<script type="text/javascript">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><% if SwaggerYard.config.title.present? %><%= SwaggerYard.config.title %><% else %>Swagger UI<% end %></title>
+  <link rel="icon" type="image/png" href="<%= image_path 'favicon-32x32.png' %>" sizes="32x32" />
+  <link rel="icon" type="image/png" href="<%= image_path 'favicon-16x16.png' %>" sizes="16x16" />
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <script type="text/javascript">
   $(function () {
     var url = window.location.search.match(/url=([^&]+)/);
     if (url && url.length > 1) {
@@ -31,13 +40,20 @@
 
     window.swaggerUi.load();
   });
-
-</script>
-
-<div class="swagger-section">
-  <div id="message-bar" class="swagger-ui-wrap">
-      &nbsp;
+  </script>
+</head>
+<body class="swagger-section">
+<div id='header'>
+  <div class="swagger-ui-wrap">
+    <a id="logo" href="http://swagger.io">swagger</a>
+    <form id='api_selector'>
+      <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
+      <div class='input'><a id="explore" href="#">Explore</a></div>
+    </form>
   </div>
-
-  <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 </div>
+
+<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+<div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+</body>
+</html>
