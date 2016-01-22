@@ -1,5 +1,9 @@
 # SwaggerYard-Rails Changelog
 
+## 0.3.2 ##
+
+* Repository moved under `livingsocial` organization.
+
 ## 0.3.1 -- 22-12-2015 ##
 
 * Don't use application layout for swagger#doc, makes setup easier

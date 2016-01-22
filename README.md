@@ -58,7 +58,7 @@ SwaggerYard.configure do |config|
 end
 ```
 
-[Getting Started]: https://github.com/tpitale/swagger_yard#getting-started
+[Getting Started]: https://github.com/livingsocial/swagger_yard#getting-started
 
 ### Write YARD documentation ###
 
@@ -100,8 +100,8 @@ class HelloController < ApplicationController
 end
 ```
 
-[SwaggerYard Usage]: https://github.com/tpitale/swagger_yard#swaggeryard-usage
-[path discovery function]: https://github.com/tpitale/swagger_yard#path-discovery-function
+[SwaggerYard Usage]: https://github.com/livingsocial/swagger_yard#swaggeryard-usage
+[path discovery function]: https://github.com/livingsocial/swagger_yard#path-discovery-function
 
 ## Development
 

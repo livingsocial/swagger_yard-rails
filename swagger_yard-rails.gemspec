@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Rails engine to parse and render json for Swagger UI}
   spec.description   = %q{Rails engine to parse and render json for Swagger UI}
-  spec.homepage      = "https://github.com/tpitale/swagger_yard-rails"
+  spec.homepage      = "https://github.com/livingsocial/swagger_yard-rails"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
