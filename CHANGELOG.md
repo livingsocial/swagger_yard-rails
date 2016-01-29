@@ -1,7 +1,8 @@
 # SwaggerYard-Rails Changelog
 
-## 0.3.2 ##
+## 0.3.2 29-01-2016 ##
 
+* Use `#controller_path` instead of duplicating controller name logic
 * Repository moved under `livingsocial` organization.
 
 ## 0.3.1 -- 22-12-2015 ##
