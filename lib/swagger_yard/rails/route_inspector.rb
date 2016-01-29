@@ -47,9 +47,13 @@ module SwaggerYard
             if route_tag
               info[:route] = route_tag.text
             else
-              controller, action = obj.path.split obj.sep, 2
-              info[:action]      = action
-              info[:controller]  = controller.underscore.sub '_controller', ''
+              begin
+                controller, action = obj.path.split obj.sep, 2
+                info[:action]      = action
+                info[:controller]  = controller.constantize.controller_path
+              rescue NameError => e
+                raise Error, e.message
+              end
             end
           end
         end
