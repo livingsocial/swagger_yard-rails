@@ -1,5 +1,10 @@
 # SwaggerYard-Rails Changelog
 
+## 0.3.3 25-07-2016 ##
+
+* Descend into engine routes when searching for matches. This allows documented
+  APIs in engines to be included in the spec.
+
 ## 0.3.2 29-01-2016 ##
 
 * Use `#controller_path` instead of duplicating controller name logic

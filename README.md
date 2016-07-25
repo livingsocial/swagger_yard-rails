@@ -1,5 +1,9 @@
 # SwaggerYard::Rails
 
+[![TravisCI](https://secure.travis-ci.org/livingsocial/swagger_yard-rails.png "TravisCI")](http://travis-ci.org/livingsocial/swagger_yard-rails "Travis-CI swagger_yard-rails")
+[![Gem Version](https://badge.fury.io/rb/swagger_yard-rails.svg)](https://rubygems.org/gems/swagger_yard-rails)
+
+
 The SwaggerYard::Rails gem is a Rails Engine designed to parse your Yardocs API controllers using SwaggerYard. It'll create a Swagger-UI complaint JSON to be served out through where you mount SwaggerYard::Rails::Engine.
 
 ## Installation
