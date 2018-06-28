@@ -1,10 +1,9 @@
 # @resource Pet
-# @resource_path /pets
-# 
+#
 # This document describes the API for interacting with Pet resources
-# 
+#
 # @authorize_with header_x_application_api_key
-# 
+#
 class PetsController < ApplicationController
   # return a list of Pets
   # @response_type [Array<Pet>]
