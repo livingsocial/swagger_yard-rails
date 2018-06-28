@@ -12,7 +12,7 @@ module Dummy
       config.assets.enabled = false
     end
 
-    if Rails::VERSION::MAJOR >= 5
+    if config.respond_to?(:load_defaults)
       config.load_defaults "#{Rails::VERSION::MAJOR}.#{Rails::VERSION::MINOR}".to_f
     end
   end
