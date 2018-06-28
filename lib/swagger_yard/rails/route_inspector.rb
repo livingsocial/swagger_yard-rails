@@ -19,7 +19,8 @@ module SwaggerYard
           info      = yard_info(yard_obj)
           route_arr = find_route(info)
           route     = route_arr.last
-          method    = route.verb.source.gsub(/[$^]/, '')
+          method    = route.verb
+          method    = method.source.gsub(/[$^]/, '') if method.respond_to?(:source)
 
           raise Error, "no http method: #{info.inspect}" if method.empty?
 

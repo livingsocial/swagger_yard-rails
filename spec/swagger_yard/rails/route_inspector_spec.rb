@@ -90,4 +90,25 @@ RSpec.describe SwaggerYard::Rails::RouteInspector do
       subject.call(missing_obj)
     end.to raise_error(described_class::Error)
   end
+
+  context "with Rails 5ish routes" do
+    let(:routes) {
+      [stub(defaults: { controller: 'foo', action: 'index'},
+            app: nil,
+            name: nil,
+            ast: '/foo(.:format)',
+            verb: 'GET',
+            parts: [:format]),
+       stub(defaults: { controller: 'pets', action: 'index' },
+            app: nil,
+            name: nil,
+            ast: '/pets(.:format)',
+            verb: 'GET',
+            parts: [:format])]
+     }
+
+    it 'looks up the route in the router' do
+      expect(subject.call(pets_index_obj)).to eq(["GET", "/pets"])
+    end
+  end
 end
