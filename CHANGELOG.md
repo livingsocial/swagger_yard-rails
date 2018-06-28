@@ -4,6 +4,7 @@
 
 * Add OpenAPI stuff -- `/swagger/openapi.json` route and `openapi:json` task
 * Bump dependency on swagger_yard to >= 1.0.0
+* Test on Rails 4.2, Rails 5.0, and latest Rails release
 
 ## 0.3.3 25-07-2016 ##
 
