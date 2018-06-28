@@ -7,8 +7,14 @@ module Dummy
   class Application < Rails::Application
     config.root = File.expand_path('../../', __FILE__)
 
-    # Disable the asset pipeline.
-    config.assets.enabled = false
+    if Rails::VERSION::MAJOR < 5
+      # Disable the asset pipeline.
+      config.assets.enabled = false
+    end
+
+    if Rails::VERSION::MAJOR >= 5
+      config.load_defaults "#{Rails::VERSION::MAJOR}.#{Rails::VERSION::MINOR}".to_f
+    end
   end
 end
 
