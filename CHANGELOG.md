@@ -1,5 +1,10 @@
 # SwaggerYard-Rails Changelog
 
+## 1.0.0 28-06-2018 ##
+
+* Add OpenAPI stuff -- `/swagger/openapi.json` route and `openapi:json` task
+* Bump dependency on swagger_yard to >= 1.0.0
+
 ## 0.3.3 25-07-2016 ##
 
 * Descend into engine routes when searching for matches. This allows documented
